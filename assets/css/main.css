@@ -3618,13 +3618,14 @@ input, select, textarea {
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
 		line-height: 4rem;
-		margin: -4rem auto 0 auto;
+		margin: 0 auto;
 		overflow: hidden;
 		padding: 0 2rem 0 0;
 		position: relative;
-		width: calc(100% - 4rem);
+		width: 100%;
 		max-width: 72rem;
 		z-index: 2;
+		box-sizing: border-box; 
 	}
 
 		#nav ul.divided li {
@@ -3703,39 +3704,51 @@ input, select, textarea {
 			#nav ul.links li {
 				display: block;
 				padding-left: 0;
+				width:20%;
 			}
-
+			
 				#nav ul.links li a {
 					-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 					-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 					-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 					transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 					display: block;
-					font-size: 0.9rem;
-					outline: 8px solid white;
-					padding: 0 3rem;
+					font-size: 1rem;
+					outline: none;
+					padding: 03 rem;
 					margin: 0 auto; /* Center the element */
 					text-align: center; /* Ensure the text is centered */
 				
 				}
 
-					#nav ul.links li a:hover {
+					#nav ul.links li a.active  {
+					
 						color: inherit !important;
 						background-color: rgba(255, 255, 255, 0.1);
+						outline: none;
 					}
-					
 
-				#nav ul.links li.active {
-					background-color: #ffffff;
-				}
+					#nav ul.links li.active {
+						background-color: #ffffff;
+					}
 
 					#nav ul.links li.active a {
 						color: #11151a;
 					}
 
-						#nav ul.links li.active a:hover {
-							color: #18bfef !important;
-						}
+					#nav ul.links li.active a:hover {
+						transform: scale(1.1);
+						transition: transform 0.2s ease-in-out;
+						color: #18bfef !important;
+					}
+					
+					#nav ul.links li a {
+						transition: transform 0.2s ease-in-out;
+					}
+					
+					#nav ul.links li a:hover {
+						transform: scale(1.1);
+					}
 
 		#nav ul.icons {
 			-moz-flex-grow: 0;
